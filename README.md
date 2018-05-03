@@ -30,12 +30,12 @@
 1. ##### Defining
 ```
 	class SomeClass {
-    	//Class Body
-    }
-    
-    struct SomeStruct {
-    	//Struct Body
-    }
+		//Class Body
+	}
+
+	struct SomeStruct {
+		//Struct Body
+	}
 ```
 2. ##### Creating new instances
 ```
@@ -44,18 +44,18 @@
 3. ##### Constructing/initializing
 ```
 	class Thermometer {
-      var temperature: Double
-      init() { 
-          temperature = 32.0 
-      }
+	      var temperature: Double
+	      init() { 
+		  temperature = 32.0 
+	      }
 	}
 ```
 4. ##### Destructing/de-initializing
 	- This method is included in the body of the class
 	```
 	deinit {
-    	//perform the deinitialization
-    }
+    		//perform the deinitialization
+    	}
 	```
 
 #### Instance reference name in data type (class)
@@ -67,18 +67,18 @@
 or in an init
 ```
 	var myVar;
-    init(myVar: String) {
-    	self.myVar = myVar
-    }
+	init(myVar: String) {
+    		self.myVar = myVar
+    	}
 ```
 
 #### Properties
 1. ##### Getters and setters…write your own or built in?
 	- Swift uses computed properties
 	```
-		var x: Int { 
+	var x: Int { 
         	set {x2 = valuePassed} 
-            get {return x2}
+            	get {return x2}
         }
     ```
 2. ##### Backing variables?
@@ -113,7 +113,7 @@ or in an init
 ```
 	class GermanShephard: Dog {
     
-    }
+    	}
 ```
 - Inheritance allows us to go from general to specific, for example all dogs can bark, but only a german shephard can sniff drugs, so we would have a drug sniffing method in the GermanShephard class but not in the dog class.
 
@@ -150,11 +150,11 @@ or in an init
 - There is also do-catch statements 
 ```
 	do { 
-    	try expression
-        	statement 
-    } catch { 
+    		try expression
+        		statement 
+	} catch { 
     
-    }
+	}
 ```
 
 #### Lambda expressions, closures, or functions as types
