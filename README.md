@@ -1,6 +1,3 @@
-# CS4330FinalProject
-Repository for the comparison of two OO language for the CS4330 Final Project
-
 ## Swift
 #### Language purposes/genesis
 1. ##### Why was the language created/What problems was the language trying to address?
@@ -24,33 +21,84 @@ Repository for the comparison of two OO language for the CS4330 Final Project
 	- Int, UInt, Float, Double, Bool, String, Character, Optional, Tuples
 
 2. ##### Are both reference and value types supported?
-	- Yes, swift has classes and structs
+	- Yes, swift has classes and structs which allows you to store data in a form of an object
 
 3. ##### Can new value types be created?
-	- Yes, swift has classes and structs
+	- Yes, swift has classes and structs which allows you to create new types
 
 #### Classes
 1. ##### Defining
-	- Class SomeClass { //Class Definition }
+```
+	class SomeClass {
+    	//Class Body
+    }
+    
+    struct SomeStruct {
+    	//Struct Body
+    }
+```
 2. ##### Creating new instances
-	- Let someObject = SomeClass()
+```
+	let someObject = SomeClass()
+```
 3. ##### Constructing/initializing
-	- Var temperature: Double
-		init() { temperature = 32.0 }
+```
+	class Thermometer {
+      var temperature: Double
+      init() { 
+          temperature = 32.0 
+      }
+	}
+```
 4. ##### Destructing/de-initializing
-	- Deinit {//perform the deinitialization}
+	- This method is included in the body of the class
+	```
+	deinit {
+    	//perform the deinitialization
+    }
+	```
 
 #### Instance reference name in data type (class)
-- Swift uses self "self.myVar = 32.0"
+- Swift uses self 
+```
+	self.myVar = 32.0
+```
+
+or in an init
+```
+	var myVar;
+    init(myVar: String) {
+    	self.myVar = myVar
+    }
+```
 
 #### Properties
 1. ##### Getters and setters…write your own or built in?
 	- Swift uses computed properties
-		“Var x: Int { set { x2 = 2 * value} get {return x2}}
+	```
+		var x: Int { 
+        	set {x2 = valuePassed} 
+            get {return x2}
+        }
+    ```
 2. ##### Backing variables?
-	- You can use backing variables in swift (Code Example)
+	- You can use backing variables in swift
+	```
+    	var myVar
+        init(myVar: String) {
+        	self.myVar = myVar
+        }
+        
+        func getMyVar() -> String {
+        	return self.myVar
+        }
+        
+        func setMyVar(myVar: String) {
+        	self.myVar = myVar
+        }
+    ```
 3. ##### Computed properties?
-	- Same as above, they can be used as getters and setters
+	- Same as above, they can be used as getters and setters (Example 1)
 
 #### Interfaces/Protocols
 1. ##### What does the language support?
@@ -61,7 +109,12 @@ Repository for the comparison of two OO language for the CS4330 Final Project
 	- Its used when a methods can be used my multiple objects, so instead of duplication that object just implements the method from one place
 
 #### Inheritance/Extension
-- Swift has inheritance, example (class GermanShephard: Dog {})
+- Swift has inheritance
+```
+	class GermanShephard: Dog {
+    
+    }
+```
 - Inheritance allows us to go from general to specific, for example all dogs can bark, but only a german shephard can sniff drugs, so we would have a drug sniffing method in the GermanShephard class but not in the dog class.
 
 #### Reflection
@@ -83,18 +136,26 @@ Repository for the comparison of two OO language for the CS4330 Final Project
 
 #### Comparisons of references and values
 1. ##### How are values compared? (i.e. comparing two strings)
-	- Swift uses == even for strings
+	- Swift uses ```==``` even for strings
 
 #### Null/Nil references
 1. ##### Which does the language use? (null/nil/etc)
-	- Swift uses nil
+	- Swift uses ```nil```
 2. ##### Does the language have features for handling null/nil references?
 	- Swift has optionals, which can either have a value or not, eliminating null pointer exceptions
 
 #### Errors and exception handling
 - Swift has the throws statement
-- characteristics of a throw statement are comparable to those of a return statement.
-- There is also do-catch statements do { try expression \t statement } catch { }
+- characteristics of a ```throws``` statement are comparable to those of a return statement.
+- There is also do-catch statements 
+```
+	do { 
+    	try expression
+        	statement 
+    } catch { 
+    
+    }
+```
 
 #### Lambda expressions, closures, or functions as types
 - Swift does not use lambda expressions but has closures
@@ -121,7 +182,7 @@ reversedNames = names.sorted(by: >)
 	- Swift singletons are guaranteed to be lazy
 #### Procedural programming/Functional Programming
 1. ##### Does the language support procedural/functional programming?
-	- Swift primarily uses procedural programming, but there are tools that allow you to use bits of functional programming (link monads)
+	- Swift primarily uses procedural programming, but there are tools that allow you to use bits of functional programming [Monad](https://en.wikipedia.org/wiki/Monad_(functional_programming))
 #### Multithreading
 1. ##### Threads or thread-like abilities
 	- There are timers, which allow you have timed tasks that repeat indefinitly or finish after one run
