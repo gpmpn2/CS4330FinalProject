@@ -246,7 +246,11 @@ class TestMultitasking3{
 
 #### Unique features of the language
 1. ##### Does the language have any particularly unique features?
-	- Simple, easy to read syntax. It reads like a sentence. Optionals and nil which take down the issue of null pointer exceptions. It has lazy properties and allows parameters to be named.
+	- Simple, easy to read syntax. 
+	- It reads like a sentence. 
+	- Optionals and nil which take down the issue of null pointer exceptions. 
+	- It has lazy properties
+	- Allows parameters to be named (makes passing in data to a function so much easier and more understandable)
 
 #### Name Spaces
 1. ##### How are name spaces implemented?
@@ -314,19 +318,19 @@ or in an init
 #### Properties
 1. ##### Getters and setters…write your own or built in?
 	- Swift uses computed properties
-	```
+```
 	var x: Int { 
         	set {x2 = valuePassed} 
             	get {return x2}
         }
-    ```
+```
 2. ##### Backing variables?
 	- You can use backing variables in swift
-	```
-    	var myVar
-        init(myVar: String) {
-        	self.myVar = myVar
-        }
+```
+	var myVar
+	init(myVar: String) {
+       		self.myVar = myVar
+	}
         
         func getMyVar() -> String {
         	return self.myVar
@@ -335,7 +339,7 @@ or in an init
         func setMyVar(myVar: String) {
         	self.myVar = myVar
         }
-    ```
+```
 3. ##### Computed properties?
 	- Same as above, they can be used as getters and setters (Example 1)
 
