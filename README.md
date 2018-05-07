@@ -239,7 +239,7 @@ class TestMultitasking3{
 ## Swift
 #### Language purposes/genesis
 1. ##### Why was the language created/What problems was the language trying to address?
-	- Swift was a large improvement to Objective-C, it incorporated a lot of the benefits of other languages into one package. It read like a modern language, but had the performance of C++. It also didn’t have issues with garbage collection. On Top of this it allowed programmers to incorporate swift with Objective-C so the language didn’t become obsolete
+	- Chris Lattner wrote swift for Apple in 2014.  Swift was a large improvement to Objective-C, it incorporated a lot of the benefits of other languages into one package. It read like a modern language, but had the performance of C++. It also didn’t have issues with garbage collection. On Top of this it allowed programmers to incorporate swift with Objective-C so the language didn’t become obsolete
 
 2. ##### Is the language a reaction to a previous language or a replacement for another language?
 	- Yes it is a reaction to Objective-C
@@ -252,7 +252,8 @@ class TestMultitasking3{
 1. ##### How are name spaces implemented?
 	- Namespacing is implicit in Swift, all classes (etc) are implicitly scoped by the module they are in. no class prefixes needed
 2. ##### How are name spaces used?
-	- TODO
+	- Namespaces are not per-file; they're per-target (based on the "Product Module Name" build setting).
+	- All Swift declarations are considered to be part of some module, so even when you write "NSLog" you're getting what Swift thinks of as "Foundation.NSLog". (its fully qualified package name)
 
 #### Types
 1. ##### What types does the language support?
@@ -359,7 +360,21 @@ or in an init
 1. ##### What reflection abilities are supported?
 	- Swift reflection allows us to look at objects properties without modifying them.
 2. ##### How is reflection used?
-	- TODO
+	- Reflection is used to find methods inside code by utilizing different parameters for example.
+```
+	class MyClassName{
+		var myNumber
+
+		func doSomething(number: Int) -> Int{
+			return number * number
+		}
+	}
+	
+	var result = doSomething(4)
+	
+	// pseudocode
+	var m = findMethod("doSomething");
+```
 
 #### Memory management
 1. ##### How is it handled?
@@ -385,6 +400,9 @@ or in an init
 #### Errors and exception handling
 - Swift has the throws statement
 - characteristics of a ```throws``` statement are comparable to those of a return statement.
+```
+	func turnFamiliarIntoToad() throws -> Toad { }
+```
 - There is also do-catch statements 
 ```
 	do { 
@@ -425,4 +443,11 @@ reversedNames = names.sorted(by: >)
 1. ##### Threads or thread-like abilities
 	- There are timers, which allow you have timed tasks that repeat indefinitly or finish after one run
 2. ##### How is multitasking accomplished?
-	- Code implementation here
+```
+	myTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
+	
+	@Obj-c
+	func runTimedCode() {
+		//Do action that will repeat every 5 seconds here
+	}
+```
