@@ -184,8 +184,8 @@ public class ClassicSingleton {
 ```
 2. ##### Can it be made thread-safe?
 	- Yes
-	  > Create the instance variable at the time of class loading
-      > Synchronize the getInstance() method
+	  > Create the instance variable at the time of class loading. 
+      > Synchronize the getInstance() method. 
       > Use a synchronized block inside the if loop and volatile variable.
 
 3. ##### Can the singleton instance be lazily instantiated?
