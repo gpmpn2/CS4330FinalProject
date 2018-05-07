@@ -53,15 +53,15 @@ class HelloWorldApp {
 ```
 2. ##### Constructing/initializing
 ```
-	public class Point {
-		   public int x = 0;
-    		   public int y = 0;
-    		   //constructor
-    		   public Point(int a, int b) {
-   		        x = a;
-		        y = b;
-    		   }
-		}
+public class Point {
+   public int x = 0;
+	   public int y = 0;
+	   //constructor
+	   public Point(int a, int b) {
+	        x = a;
+        y = b;
+	   }
+}
 ```
 3. ##### Creating new instances
 ```
@@ -78,12 +78,12 @@ class HelloWorldApp {
 1. ##### Getters and setters…write your own or built in?
 	- In Java you create your own Getter and Setter methods
 ```
-	- public void setName(String name) {
-		This.name = name;
-	  }
-	  public String getName() {
-		Return name;
-	  }
+public void setName(String name) {
+	This.name = name;
+}
+public String getName() {
+	Return name;
+}
 ```
 2. ##### Backing variables?
 	- Java does not have backing variables
@@ -96,13 +96,12 @@ class HelloWorldApp {
 2. ##### What abilities does it have?
 	- In general, interfaces facilitate the key concepts in OOP like abstraction, inheritance and polymorphism. In addition, interfaces add flexibility and re-usability for software components.
 3. ##### How is it used?
+	// A simple interface
 ```
-	- // A simple interface
-		interface Player
-		{
-		    final int id = 10;
-		    int move();
-		}
+interface Player {
+    final int id = 10;
+    int move();
+}
  
 ```
 
@@ -142,13 +141,13 @@ class HelloWorldApp {
 - Lambda expressions enable you to do this, to treat functionality as method argument, or code as data.
   This method prints members that are older than a specific age:
 ```
-  public static void printPersonsOlderThan(List<Person> roster, int age) {
-    for (Person p : roster) {
-        if (p.getAge() >= age) {
-            p.printPerson();
-        }
-    }
-  }
+public static void printPersonsOlderThan(List<Person> roster, int age) {
+	for (Person p : roster) {
+		if (p.getAge() >= age) {
+			p.printPerson();
+		}
+	}
+}
 ```
 
 #### Implementation of listeners and event handlers
@@ -156,32 +155,32 @@ class HelloWorldApp {
   Waits for input in order to do something
   Ex) implementing the event handling for a button:
 ```
-	public class Beeper ... implements ActionListener {
-	    ...
-	    //where initialization occurs:
-	        button.addActionListener(this);
-	    ...
-	    public void actionPerformed(ActionEvent e) {
-	        ...//Make a beep sound...
-	    }
-	}
+public class Beeper ... implements ActionListener {
+    ...
+    //where initialization occurs:
+        button.addActionListener(this);
+    ...
+    public void actionPerformed(ActionEvent e) {
+        ...//Make a beep sound...
+    }
+}
 ```
 #### Singleton
 1. ##### How is a singleton implemented?
 	- A class that can have only one object (an instance of the class) at a time.
 ```
-	public class ClassicSingleton {
-	   private static ClassicSingleton instance = null;
-	   protected ClassicSingleton() {
-	      // Exists only to defeat instantiation.
-	   }
-	   public static ClassicSingleton getInstance() {
-	      if(instance == null) {
-	         instance = new ClassicSingleton();
-	      }
-	      return instance;
-	   }
-	}
+public class ClassicSingleton {
+   private static ClassicSingleton instance = null;
+   protected ClassicSingleton() {
+      // Exists only to defeat instantiation.
+   }
+   public static ClassicSingleton getInstance() {
+      if(instance == null) {
+         instance = new ClassicSingleton();
+      }
+      return instance;
+   }
+}
 ```
 2. ##### Can it be made thread-safe?
 	- Yes
@@ -202,37 +201,37 @@ class HelloWorldApp {
 1. ##### Threads or thread-like abilities
 	- Java supports threads:
 ``` 
-	public class HelloRunnable implements Runnable {
-	    public void run() {
-	        System.out.println("Hello from a thread!");
-	    }
-	    public static void main(String args[]) {
-	        (new Thread(new HelloRunnable())).start();
-	    }
-	}
+public class HelloRunnable implements Runnable {
+    public void run() {
+        System.out.println("Hello from a thread!");
+    }
+    public static void main(String args[]) {
+        (new Thread(new HelloRunnable())).start();
+    }
+}
 ```
 2. ##### How is multitasking accomplished?
 	- In Java, you can have multiple run() methods to have multitasking in multiple threads.
 	- Program of performing two tasks by two threads:
 ```
-	class Simple1 extends Thread{  
-	 public void run(){  
-	   System.out.println("task one");  
-	 }  
-	}   
-	class Simple2 extends Thread{  
-	 public void run(){  
-	   System.out.println("task two");  
-	 }  
-	}    
-	class TestMultitasking3{  
-	 public static void main(String args[]){  
-	  Simple1 t1=new Simple1();  
-	  Simple2 t2=new Simple2();    
-	  t1.start();  
-	  t2.start();  
-	 }  
-	}
+class Simple1 extends Thread{  
+	public void run(){  
+		System.out.println("task one");  
+	}  
+}   
+class Simple2 extends Thread{  
+	public void run(){  
+		System.out.println("task two");  
+	}  
+}    
+class TestMultitasking3{  
+	public static void main(String args[]){  
+		Simple1 t1=new Simple1();  
+		Simple2 t2=new Simple2();    
+		t1.start();  
+		t2.start();  
+ 	}  
+}
 ```
 
 ---
