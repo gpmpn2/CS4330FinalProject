@@ -1,3 +1,6 @@
+# Grant Maloney
+# Jeremy Gonzalez
+
 ## Java
 #### Language purposes/genesis
 1. ##### Why was the language created/What problems was the language trying to address?
