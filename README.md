@@ -1,5 +1,5 @@
-# Grant Maloney
-# Jeremy Gonzalez
+# Grant Maloney, Jeremy Gonzalez
+#### Java Vs Swift
 
 ## Java
 #### Language purposes/genesis
